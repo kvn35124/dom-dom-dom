@@ -46,11 +46,21 @@ button.addEventListener('click', function () {
     
 
     box.addEventListener('dblclick', function() {
-        let nextSibling = 
-        if (idCounter % 2 == 0)
-            container.removeChild();
-        else 
-            container.removeChild();
+        if(box.id % 2 === 0) {
+            //even
+            if(box.previousSibling === null) {
+                window.alert("NO WAY!!!")
+            } else {
+                box.parentNode.removeChild(box.previousSibling);
+            }
+        } else {
+            //odd
+            if(box.nextSibling === null) {
+                window.alert("NO WAY!!!")
+            } else {
+                box.parentNode.removeChild(box.nextSibling);
+            }
+        }
     })
 
 })
